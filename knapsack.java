@@ -7,11 +7,9 @@ class KS{
     static int check( int m, int wt[], int val[], int n, int[][] dp){
         if (n==0 || m==0)
         return 0;
-
         if(dp[n][m]!=-1){
             return dp[n][m];
         }
-
         if(wt[n-1] > m){
             return dp[n][m] = check(m,wt, val, n-1, dp);
         }
@@ -29,7 +27,6 @@ class KS{
             }
         }
         return check(m, wt, val, N, dp);
-
     }
 
     public static void main(String[] args) {
