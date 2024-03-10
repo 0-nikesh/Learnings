@@ -41,3 +41,5 @@ class KS{
     }
 }
 
+// time complexity = O(2^n)
+// space complecity = O(n.m) where n is no. of object and m is capacity of knapsack
