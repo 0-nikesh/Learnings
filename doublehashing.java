@@ -1,8 +1,8 @@
 class DH {
-    static final int tablesize = 10; // size of the table
-    static int[] keys; // array to store the keys
-    static int[] values; // array to store the values
-    static int size; // Number of elements currently stored in the hash table
+    final int tablesize = 10; // size of the table
+    int[] keys; // array to store the keys
+    int[] values; // array to store the values
+    int size; // Number of elements currently stored in the hash table
 
     public DH() {
         keys = new int[tablesize];
@@ -11,12 +11,12 @@ class DH {
     }
 
     // First hash function to compute the index for a key
-    static int hash(int key) {
+    int hash(int key) {
         return key % tablesize;
     }
 
     // Second hash function for double hashing
-    static int hash2(int key) {
+    int hash2(int key) {
         // Prime number less than tablesize
         int prime = 7;
         return prime - (key % prime);
@@ -44,18 +44,20 @@ class DH {
 
     public static void main(String[] args) {
         DH hashTable = new DH();
-        hashTable.insert(35, 80);
-        hashTable.insert(5, 10);
-        hashTable.insert(15, 20);
-        hashTable.insert(25, 30);
-        hashTable.insert(7, 40);
-        hashTable.insert(21, 43);
-        hashTable.insert(11, 33);
-        hashTable.insert(17, 50);
+        hashTable.insert(101, 80);
+        hashTable.insert(201, 10);
+        hashTable.insert(301, 20);
+        hashTable.insert(102, 30);
+        hashTable.insert(202, 40);
+        hashTable.insert(302, 43);
+        hashTable.insert(103, 33);
+        hashTable.insert(203, 50);
+        hashTable.insert(304, 3);
+        hashTable.insert(104, 2);
 
-        for (int i = 0; i < tablesize; i++) {
-            if (keys[i] != 0) {
-                System.out.println("Key: " + keys[i] + ", Value: " + values[i]);
+        for (int i = 0; i < hashTable.tablesize; i++) {
+            if (hashTable.keys[i] != 0) {
+                System.out.println("Key: " + hashTable.keys[i] + ", Value: " + hashTable.values[i]);
             }
         }
     }
