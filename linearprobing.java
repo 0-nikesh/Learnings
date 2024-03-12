@@ -1,3 +1,4 @@
+//15. What is hashing ? Explain concept of hash table and hash function with example and implement linear probing collision resolution function .(code for insertion only)
 class LP{
     static final int  tablesize=10; //size of the table
     static int [] keys; //array to store the keys
