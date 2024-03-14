@@ -5,8 +5,8 @@ class MaxProfit {
         int buyPrice = 0;
         int sellPrice = 0;
 
-        for (int i = 0; i < price.length - 1; i++) {
-            for (int j = i + 1; j < price.length; j++) {
+        for (int i = 0; i < price.length; i++) {
+            for (int j = 0; j < price.length; j++) {
                 int profit = price[j] - price[i];
                 if (profit > maxProfit) {
                     maxProfit = profit;
