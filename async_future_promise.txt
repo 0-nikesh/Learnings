@@ -1,0 +1,76 @@
+----------------------------------------------------------------------------------------
+1. Explain the concept of future and promises in asynchronous programming.
+
+Future: 
+    A future represents the result of an asynchronous operation that hasn't completed yet. 
+    When you initiate an asynchronous task, you receive a future object immediately, 
+    which serves as a placeholder for the eventual result. You can check the status of
+    the future, whether it's pending, completed, or failed, and you can also wait 
+    for the completion of the operation and retrieve the result when it's available. 
+    Futures allow you to continue with other tasks while waiting for the asynchronous 
+    operation to finish, thus enabling non-blocking execution.
+
+Promises: 
+    A promise is an object that represents the eventual completion or failure of an 
+    asynchronous operation and provides a way to interact with the result once it's 
+    available. When you create a promise, you're essentially making a commitment that
+    a value will be provided at some point in the future. Promises typically have 
+    methods to resolve (fulfill) or reject, indicating the successful completion 
+    or failure of the associated operation. Once a promise is resolved or rejected, 
+    it transitions into a final state, and its associated future is notified of the result.
+
+In summary, futures represent the placeholder for the eventual result of an asynchronous operation, 
+while promises are used to interact with and control the outcome of that operation.
+-----------------------------------------------------------------------------------------------------------------------
+2. Compare and contrast the performance characteristics of synchronous and asynchronous programming  approaches.
+
+Synchronous Programming:
+
+    Blocking Nature: 
+    In synchronous programming, tasks are executed sequentially, meaning each task must wait 
+    for the completion of the previous one before it can start. This can lead to blocking, where 
+    the entire program halts while waiting for I/O operations or other blocking tasks to finish.
+
+    Predictable Flow: 
+    Since tasks are executed sequentially, the flow of execution is more predictable and easier to 
+    understand. Debugging and reasoning about the code are typically simpler in synchronous programming.
+
+    Resource Utilization: 
+    Synchronous programming may lead to suboptimal utilization of system resources, especially in 
+    situations where tasks could be executed concurrently but are instead executed sequentially.
+
+Asynchronous Programming:
+
+    Non-Blocking: 
+    Asynchronous programming allows tasks to execute independently and concurrently, without 
+    waiting for each other to complete. This non-blocking nature enhances performance, as the program can 
+    continue executing other tasks while waiting for I/O operations or other asynchronous tasks to finish.
+
+    Improved Scalability: 
+    Asynchronous programming is well-suited for I/O-bound tasks, where a significant portion of the time 
+    is spent waiting for external resources. By allowing multiple tasks to run concurrently, asynchronous 
+    programming can improve scalability and overall system throughput.
+
+    Complexity: 
+    Asynchronous programming introduces additional complexity due to the need to manage callbacks, futures, 
+    promises, or other mechanisms for handling asynchronous operations. This complexity can make code harder 
+    to understand, debug, and maintain, especially for developers unfamiliar with asynchronous programming paradigms.
+----------------------------------------------------------------------------------------------------------------------------
+3. Under what circumstances you would choose one over the other.
+
+Choosing Between Synchronous and Asynchronous Programming:
+
+    Use Synchronous Programming When:
+        The task involves primarily CPU-bound operations with minimal I/O operations.
+        The codebase is small or doesn't require concurrent execution for performance optimization.
+        Code simplicity and readability are prioritized over performance gains.
+
+    Use Asynchronous Programming When:
+        The task involves significant I/O operations, such as network requests, file I/O, or database queries.
+        There's a need to improve system scalability and responsiveness by allowing concurrent execution of tasks.
+        Performance optimization is critical, and the benefits of non-blocking I/O outweigh the complexity introduced by asynchronous programming.
+
+In summary, synchronous programming is straightforward and predictable but may suffer from blocking 
+and reduced performance in I/O-bound scenarios. Asynchronous programming offers improved performance 
+and scalability by enabling non-blocking execution but introduces complexity in managing 
+asynchronous operations.
